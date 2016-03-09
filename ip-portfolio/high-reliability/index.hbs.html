@@ -1,0 +1,70 @@
+<!-- @meta {title="High Reliability"} -->
+
+	<script type="application/javascript">
+
+		if(cloudbusSettings)
+		{
+			cloudbusSettings.namingRules["ip-portfolio"] = "IP Portfolio";
+			cloudbusSettings.namingRules["high-reliability"] = "High Reliability";
+		}
+	</script>
+
+	<div class="jumbotron jumbo-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<img class="thumbnail" src="/static/metal-plate.jpg" width="300" height="300" alt="Reinforced metal plate"/>
+				</div>
+				<div class="col-md-9">
+					<h2>Design for High Reliability</h2>
+					<p>Cloudbus has experience engineering both physical security and safety-of-life applications, where product failure or malfunction could result in theft, property damage, injury or even loss of life.  We apply rigorous static-analysis, fuzzing and simulation techniques to our firmware to discover weaknesses and fix them before they can cause unexpected failure or be exploited by attackers.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<a id="design-for-safety"></a>
+	<div class="jumbotron jumbo-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-9">
+					<h2>Concept: <em>Reliability by design</em></h2>
+					<p>To be fully reliable, software must be designed for predictability at both the operational and source-code levels.  The biggest risk to the quality of high-reliability systems is often the people who work on them, particularly those who maintain after the original authors have moved on.  Cloudbus employs rigorous discipline in source code architecture to design for maximum predictability, readability and confidence, developing embedded firmware to dual-build for both the target device as well as PC simulators, stress- and fuzz-test fixtures and static analysis rigs.  A wide array of run-time techniques are also employed, such as:
+					<ul>
+					<li>heap and stack canaries</li>
+					<li>trap pages/regions</li>
+					<li>multiple independent watchdogs</li>
+					<li>internal memory validation checksums</li>
+					<li>execution chokepoints</li>
+					<li>product-specific self-checking constraints</li>
+					</p>
+				</div>
+				<div class="col-md-3">
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr/>
+
+	<a id="oat"></a>
+	<div class="jumbotron jumbo-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+				</div>
+				<div class="col-md-9">
+					<h2>Case study: <em>Trust, but verify</em></h2>
+					<small>Designed by Cloudbus for <em>[undisclosed client]</em>, 2014-2015</small>
+					<hr/>
+					<p>Part of the requirements for <em>[a smart-home product]</em> included developing firmware for one on-board microcontroller to run all safety-critical systems where the life or death of the user was at stake.  Moreover, the firmware has to operate continuously for ten years with no provision for <a href="/ip-portfolio/ota">software update</a>.  Finally, the chip has to use the absolute minimum of energy to achieve this, and is responsible for switching on and off all other power domains of the product.</p>
+				</div>
+				<div class="col-md-3">
+					<blockquote><p><em>To be reliable, this product's firmware must completely distrust the hardware it's running on. This includes its internal RAM.</em></p></blockquote>
+				</div>
+				<div class="col-md-9">
+					<p>Cloudbus's solution included a deadline scheduler and a continuous series of self-checking assertions that drive a system-health arbiter.  Too many failures in too short a time trigger a shutdown and <em>safing</em> of the system in question.  All events are recorded and periodically uploaded to the web for analysis.</p>
+					<p>PC simulation, stress tests and fuzzing were used to verify integrity of the software systems. This solution met all the stability, reliability, performance and maintainability goals of the product.</p>
+				</div>
+			</div>
+		</div>
+	</div>
